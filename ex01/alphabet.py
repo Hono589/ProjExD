@@ -18,6 +18,8 @@ def main():
   ti = end - st
   print(f"所要時間{ti}秒かかりました")
 
+
+#　出題
 def shutudai():
   al = [chr(c+65) for c in range(26)]
   num = random.randint(al, moji)

@@ -46,8 +46,9 @@ def kaitou(seikai):
       if c not in seikai:
         print("不正解です。またチャレンジしてください")
       seikai.remove(c)
+      return 0
     print("正解です。")
-    return 1
+    
 
 if __name__ == "__main__":
   main()

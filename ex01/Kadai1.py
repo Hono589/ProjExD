@@ -19,7 +19,7 @@ def shutudai():
   def kaitou(sei):
     a = input("答えてください")
     if a in sei:
-      print("正解！！！")
+      print("正解だよ！！！")
     else:
       print("不正解！！！")
 

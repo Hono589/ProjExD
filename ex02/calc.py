@@ -16,6 +16,12 @@ def button_click(event):
   else:
     entry.insert(tk.END, num)
 
+  if num == "C":
+    a = entry.get()
+    s = eval(a)
+    entry.delete(0, tk.END)
+    entry.insert(tk.END, s)
+
 #ボタンイベント
 '''def make_click(ch):
   def click(e):

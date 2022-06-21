@@ -41,7 +41,8 @@ if __name__ == "__main__":
                     text=f"{num}",
                     width=4,
                     height=3,
-                    bg='#00FA9A', fg='#2E8B22',
+                    bg='#00FA9A',    #bgはエメラルドグリーン
+                    fg='#2E8B22',    #fgは緑
                     font=("Times New Roman", 20),
                     #num{14} =  
                     )

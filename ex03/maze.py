@@ -30,8 +30,22 @@ def main_proc():
 
   cx, cy = mx*100+50, my*100+50
   #cx, cy = cx+d[key][0], cy+d[key][1]
-  canvas.coords("tori", cx, cy)
+  canvas.coords("photo", cx, cy)
   root.after(100, main_proc)
+
+# ゴールするまで移動させる関数の定義
+def goal_maze(pi):
+  s = 0   # スタート地点
+  state_history = [0]
+
+  while (1): # ゴールするまでループ
+    next_s = get_next_s(pi, s)
+    state_history.append(next_s)
+
+    if next_s == 8:
+      break
+    else:
+      s = next_s
 
 if __name__ == "__main__":
   root = tk.Tk()
@@ -44,11 +58,13 @@ if __name__ == "__main__":
   #print(maze_bg)
   mm.show_maze(canvas, maze_bg)# 
 
-  tori = tk.PhotoImage(file="fig/2.png")
+  photo = tk.PhotoImage(file="fig/トラさん.png")
+  photo = photo.zoom(8)
+  photo = photo.subsample(32)
   mx, my = 1, 1
   cx, cy = mx*100+50, my*100+50
   #cx, cy = 300, 400
-  canvas.create_image(cx, cy, image=tori, tag="tori")
+  canvas.create_image(cx, cy, image=photo, tag="photo")
 
   key = ""
 
@@ -56,5 +72,6 @@ if __name__ == "__main__":
   root.bind("<KeyRelease>", key_up)
 
   main_proc()
+  
 
   root.mainloop()

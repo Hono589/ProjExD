@@ -49,7 +49,7 @@ def main_proc():
 
 if __name__ == "__main__":
   root = tk.Tk()
-  root.title("迷えるこうかとん")
+  root.title("迷えるトラさん")
   
   canvas = tk.Canvas(root, width=1500, height=900, bg="black") #windowの大きさと色
   canvas.pack()

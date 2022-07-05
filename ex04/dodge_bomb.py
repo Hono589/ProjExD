@@ -59,8 +59,8 @@ def main():
 
     #練習5
     screen_sfc.blit(bmimg_sfc, bmimg_rct)
-    
-    #練習7
+
+    #練習7 #爆弾の移動
     x, y = check_bound(bmimg_rct, screen_rct)
     vx *= x
     vy *= y

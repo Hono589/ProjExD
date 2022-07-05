@@ -5,7 +5,7 @@ import random
 
 def main():
   clock = pg.time.Clock()
-  pg.display.set_caption("逃げろ！こうかとん")
+  pg.display.set_caption("逃げろ！わんちゃん")
   screen_sfc = pg.display.set_mode((1600, 900)) #Surface
   screen_rct = screen_sfc.get_rect()            #画面用Rect
   bgimg_sfc = pg.image.load("fig/hosi.jpg")    #背景画像用Surface
@@ -13,9 +13,9 @@ def main():
   screen_sfc.blit(bgimg_sfc, bgimg_rct)
 
   #練習3 こうかとん
-  kkimg_sfc = pg.image.load("fig/inu.png")   # 犬画像用Surface
-  kkimg_sfc = pg.transform.rotozoom(kkimg_sfc, 0, 1.0)  #犬画像の拡大Surface
-  kkimg_rct = kkimg_sfc.get_rect()         #こうかとん画像用Rect
+  inu = pg.image.load("fig/inu.png")   # 犬画像用Surface
+  inu = pg.transform.rotozoom(inu, 0, 1.0)  #犬画像の拡大Surface
+  kkimg_rct = inu.get_rect()         #こうかとん画像用Rect
   kkimg_rct.center = 900, 400              #こうかとんの中心を900、400に指定
 
   #練習5 爆弾
@@ -63,7 +63,7 @@ def main():
       if key_states[pg.K_LEFT] == True: kkimg_rct.centerx += 1 #y -1
       if key_states[pg.K_RIGHT] == True: kkimg_rct.centerx -= 1
 '''
-    screen_sfc.blit(kkimg_sfc, kkimg_rct)
+    screen_sfc.blit(inu, kkimg_rct)
 
     #練習6
     bmimg_rct.move_ip(vx, vy)

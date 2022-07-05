@@ -96,11 +96,11 @@ def check_bound(rct, scr_rct):
     if rct.top < scr_rct.top or scr_rct.bottom < rct.bottom: y = -1   #画面外に行ったらy=-1
     return x, y
 
-'''def check_b2(rct2, scr_rct2):
+def check_b2(rct2, scr_rct2):
   a, b = +1, +2
   if rct2.left < scr_rct2.left or scr_rct2.right < rct2.right: a = -1   #画面外に行ったらx=-1
   if rct2.top < scr_rct2.top or scr_rct2.bottom < rct2.bottom: b = -1   #画面外に行ったらy=-1
-  return a, b'''
+  return a, b
 
 if __name__ == "__main__":
   pg.init()

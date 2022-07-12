@@ -78,7 +78,7 @@ class Bomb:
         # 練習5
         self.blit(scr)
 
-
+#UFOを動かせるようにする
 class UFO:
     speed = 10
     images = []
@@ -87,6 +87,7 @@ class UFO:
         self.sfc = pg.transform.rotozoom(self.sfc, 0, size)  # Surface
         self.rct = self.sfc.get_rect()          # Rect
         self.rct.center = xy
+        #これで動かせるようにしたかった
         #self.vx, self.vy = XY
         # self.image = self.images[0]
         # self.facing = random.choice((-1, 1)) * UFO.speed
@@ -103,7 +104,7 @@ class UFO:
         #self.rct.move_ip(+1, 0)
         self.blit(scr)
 
-
+#ビームがこうかとんから出るようにする
 class Shot:
     def __init__(self, chr:Bird):
         self.sfc = pg.image.load("fig/beam.png")    # Surface
@@ -132,7 +133,6 @@ def main():
     while True:
         #screen_sfc.blit(bgimg_sfc, bgimg_rct)
         scr.blit()
-
         # 練習2
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -140,7 +140,6 @@ def main():
             if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                 beam = kkt.attack()
 
-        
         kkt.update(scr)
         bkd.update(scr)
         ufo.update(scr)
@@ -164,7 +163,6 @@ def check_bound(rct, scr_rct):
     if rct.left < scr_rct.left or scr_rct.right  < rct.right : yoko = -1 # 領域外
     if rct.top  < scr_rct.top  or scr_rct.bottom < rct.bottom: tate = -1 # 領域外
     return yoko, tate
-
 
 
 if __name__ == "__main__":
